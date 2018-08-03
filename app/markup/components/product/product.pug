@@ -1,0 +1,55 @@
+-
+  var items = [
+    {
+      status: 'primary', 
+      category: 'Сказочное заморское яство',
+      title: 'Нямушка',
+      subtitle: 'с фуа-гра', 
+      desc: '<b>10</b> порций <br>мышь в подарок',
+      weight: '0,5', 
+      message: 'Печень утки разварная с артишоками.',
+    },
+    {
+      status: 'choosed', 
+      category: 'Сказочное заморское яство',
+      title: 'Нямушка',
+      subtitle: 'с рыбой', 
+      desc: '<b>40</b> порций <br><b>2</b> мыши в подарок',
+      weight: '2', 
+      message: 'Головы щучьи с чесноком да свежайшая сёмгушка.',
+    },
+    {
+      status: 'out', 
+      category: 'Сказочное заморское яство',
+      title: 'Нямушка',
+      subtitle: 'с курой', 
+      desc: '<b>100</b> порций<br><b>5</b> мышей в подарок<br>заказчик доволен',
+      weight: '5', 
+      message: 'Филе из цыплят с трюфелями в бульоне.',
+    }
+
+  ]
+mixin product_item(data)
+  .product_wrap
+    .product(class='product--'+data.status)
+      .product_body
+        .product_category
+          span.product_category--show= data.category
+          span.product_category--hover= 'Котэ не одобряет?'
+        .product_title= data.title
+        .product_subtitle= data.subtitle
+        .product_desc!= data.desc
+        .product_image
+          img(src="assets/media/images/content/cat.png")
+        .product_weight(class='product_weight--'+data.status) 
+          span!= data.weight
+          small кг
+    .product_message(class='product_message--'+data.status,)
+      span.product_message--default Чего сидишь? Порадуй котэ, <a class="js_select" href="#">купи.</a>
+      span.product_message--selected!= data.message
+      span.product_message--disabled!= 'Печалька, '+data.subtitle+' закончился.'
+.product_grid
+  each item in items
+    +product_item(item)
+
+

@@ -1,0 +1,48 @@
+@import '_deps';
+body {
+  font-family: 'TrebuchetMS';
+  margin: 0;
+  padding: 0;
+  background-image: url('assets/media/images/shared/bg_pattern.png'); 
+}
+*{
+  box-sizing: border-box;
+  &:before,&:after{
+    box-sizing: border-box;
+  }
+}
+.page_title{
+  color: #fff;
+  font-family: 'Exo'; 
+  font-weight: 100;
+  text-align: center;
+  font-size: 36px;
+  margin: 0;
+  padding: 37px 0 23px 0;
+}
+.scene{
+
+  height: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.container{
+  width: 1280px;
+  padding: 0 40px;
+  margin: 0 auto;
+}
+// responsive
+@media all and (max-width: 1280px){
+  .container{
+    width: 100%;
+  }
+}
+// hacks
+@media all and (-ms-high-contrast:none){
+  .scene{
+    height: 100vh;
+  }
+}
