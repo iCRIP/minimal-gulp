@@ -1,0 +1,7 @@
+@mixin retina($url, $size: auto) {
+  background-image: url($imgPath + $url + '.png');
+  @media (min-resolution: 192dpi) {
+    background-image: url($imgPath + $url + '@2x.png');
+    background-size: $size;
+  }
+}

@@ -1,12 +1,28 @@
 @font-face {
-  font-family: 'Exo';
-  src: url('assets/media/fonts/Exo20-Thin.woff2') format('woff2'), url('assets/media/fonts/Exo20-Thin.woff') format('woff');
-  font-weight: 100;
+  font-family: MagistralC;
+  src: url('assets/media/fonts/magistralc/MagistralC.woff') format('woff');
+  font-weight: 400;
   font-style: normal;
 }
 @font-face {
-  font-family: 'TrebuchetMS';
-  src: url('assets/media/fonts/TrebuchetMS.woff2') format('woff2'), url('assets/media/fonts/TrebuchetMS.woff') format('woff');
-  font-weight: 100;
+  font-family: MagistralC;
+  src: url('assets/media/fonts/magistralc/MagistralC-Bold.woff') format('woff');
+  font-weight: 700;
   font-style: normal;
 }
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&subset=cyrillic');
+
+
+$ffMain: 'Roboto', sans-serif;
+$ffHeader: 'MagistralC', sans-serif;
+$colorHover: #23C431;
+$colorMain: #fff;
+$colorPrimary: #F69F21;
+$colorGrey: #AEAEAE;
+$colorDark: #000;
+$colorRed: #FF0000;
+
+$imgPath: 'assets/media/images/shared/';
+
+@import '_functions';
+@import '_mixins';

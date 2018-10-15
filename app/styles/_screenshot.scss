@@ -1,0 +1,26 @@
+.screenshot {
+  position: absolute;
+  text-align: center;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 20;
+  pointer-events: none;
+  opacity: 0;
+  &.active {
+    opacity: .3;
+  }
+  &-btn {
+    width: em(50);
+    height: em(50);
+    background-color: $colorPrimary;
+    border-radius: 50%;
+    position: fixed;
+    top: em(10);
+    right: em(10);
+    z-index: 999;
+    &.active {
+      background-color: $colorHover;
+    }
+  }
+}

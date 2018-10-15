@@ -1,0 +1,5 @@
+$rem: 16;
+
+@function em($px, $empx: $rem) {
+  @return ($px / $empx) + 0em;
+}
