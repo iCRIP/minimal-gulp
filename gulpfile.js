@@ -14,6 +14,7 @@ var gulp = require('gulp'),
   data = require('gulp-data'),
   fs = require('fs'),
   path = require('path'),
+  args = require('yargs').argv;
   merge = require('gulp-merge-json');
 
 gulp.task('browserSync', () => {
@@ -84,11 +85,11 @@ gulp.task('pug', ['pug:data'], () => {
   .pipe(browserSync.reload({stream: true}))
 })
 gulp.task('watch', ['browserSync', 'scss', 'js', 'pug'], function(){
-  gulp.watch('app/**/*.scss', ['scss'])
+  gulp.watch('app/**/**.scss', ['scss'])
     .on('error', notify.onError((error) => error));
-  gulp.watch('app/**/*.pug', ['pug'])
+  gulp.watch('app/**/**.pug', ['pug'])
     .on('error', notify.onError((error) => error));
-  gulp.watch('app/**/*.js', ['js'])
+  gulp.watch('app/**/**.js', ['js'])
     .on('error', notify.onError((error) => error));
 })
 gulp.task('image', function () {
@@ -109,3 +110,34 @@ gulp.task('build', () => {
     .pipe(gulp.dest('dist'));
 });
 gulp.task('default', ['watch']);
+var filesToCreate = [
+  {
+    path: 'app/styles/sections/',
+    ext: '.scss',
+    content: '.{sectionName} {\n\t\n}'
+  },
+  {
+    path: 'app/markup/sections/',
+    ext: '.pug',
+    content: 'mixin {sectionName}() \n\t'
+  }
+]
+gulp.task('make-section', () => {
+  if(args.withName) {
+    var name = args.withName;
+    filesToCreate.forEach(file => {
+      var content = file.content.replace(/\{sectionName}/g, name);
+      var path = file.path + name + file.ext;
+      fs.writeFile( path, content, 'utf8', err => {
+        if(err) {
+          console.log(err)
+        } else {
+          console.log('created ' + path)
+        }
+      });
+    })
+  } else {
+    console.log('example "gulp make-section --withName=\"sectionName\""')
+  }
+
+})
