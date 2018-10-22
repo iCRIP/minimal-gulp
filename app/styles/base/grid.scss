@@ -1,0 +1,44 @@
+.container{
+  width: 100%;
+  padding-left: em(15);
+  padding-right: em(15);
+  &--flex {
+    display: flex;
+    flex-wrap: wrap;
+    height: 100%;
+  }
+}
+.col {
+  width: 100%;
+  &--right {
+    // margin-left: auto;
+  }
+  &--bottom {
+    margin-top: auto;
+  }
+}
+@media (min-width: 960px) {
+  .container {
+    width: em(960);
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .col {
+    &--right {
+      margin-left: auto;
+    }
+    &-md {
+      &--half {
+        width: 50%;
+      }
+    }
+  }
+}
+// desktop HD
+@media (min-width: 1070px) {
+  .container {
+    width: em(1070);
+    padding-left: 0;
+    padding-right: 0;
+  }
+}

@@ -1,6 +1,7 @@
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: $ffMain, sans-serif;
   color: $colorMain;
+  background-color: #eaeaea;
   margin: 0;
   padding: 0;
   overflow-x: hidden;
@@ -9,115 +10,17 @@ body {
 *{
   box-sizing: border-box;
   // outline: 1px solid red;
+  &:focus {
+    outline: none;
+  }
   &:before,&:after{
     box-sizing: border-box;
   }
 }
-.container{
-  width: 100%;
-  padding-left: em(15);
-  padding-right: em(15);
-}
-.scene {
-  // min-height: 100vh;
-}
-.btn {
-  font-family: $ffMain;
-  text-align: center;
-  color: $colorPrimary;
-  border: 1px solid;
-  border-radius: 3px;
-  background-color: transparent;
-  text-decoration: none;
-  display: inline-block;
-  font-size: em(16);
-  padding: 1.25em 1.74em;
-  transition: .2s;
-  &:hover {
-    color: $colorMain;
-    background-color: $colorPrimary;
-    border-color: transparent;
-  }
-  &:focus {
-    box-shadow: 0 0 20px 0 $colorHover;
-    outline: none;
-  }
-  &--fill {
-    background-color: $colorPrimary;
-    color: $colorMain;
-    width: 100%;
-    padding: em(26, 20) em(25, 20) em(27, 20);
-    font-size: em(20);
-    border-color: $colorPrimary;
-    text-align: center;
-    font-weight: 300;
-    &:hover {
-      background-color: transparent;
-      color: $colorPrimary;
-      border-color: $colorPrimary;
-    }
-  }
-  &--primary {
-    color: $colorMain;
-    background-color: $colorHover;
-    border-color: transparent;
-  }
-  &--black {
-    border-color: $colorDark;
-    color: $colorDark;
-    text-transform: uppercase;
-  }
-  
-}
-.fade-in {
-  opacity: 0;
-  transition: .8s;
-  &.active {
-    opacity: 1;
-  }
-}
-.slide-in {
-  transform: translate(-40px, -20px);
-  opacity: 0;
-  transition: .8s;
-  &.active {
-    transform: translate(0);
-    opacity: 1;
-  }
-}
-// responsive helpers
-.show {
-  &--mobile {
-    display: block;
-  }
-  &--tablet {
-    display: none;
-  }
-}
 
-// tablet landscape
-@media (min-width: 768px) {
-  .show {
-    &--mobile {
-      display: none;
-    }
-    &--tablet {
-      display: block;
-    }
-  }
-}
-@media (min-width: 960px) {
-  .container {
-    width: em(960);
-    margin-left: auto;
-    margin-right: auto;
-  }
-}
-// desktop HD
-@media (min-width: 1170px) {
-  .container {
-    width: em(1170);
-    
-  }
-  
-}
+@import 'base/btns.scss';
+@import 'base/grid.scss';
+@import 'base/animations.scss';
+@import 'base/helpers.scss';
+@import 'base/basics.scss';
+

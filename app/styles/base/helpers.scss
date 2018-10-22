@@ -1,0 +1,21 @@
+// responsive helpers
+.show {
+  &--mobile {
+    display: block;
+  }
+  &--tablet {
+    display: none;
+  }
+}
+
+// tablet landscape
+@media (min-width: 768px) {
+  .show {
+    &--mobile {
+      display: none;
+    }
+    &--tablet {
+      display: block;
+    }
+  }
+}

@@ -7,8 +7,12 @@
   z-index: 20;
   pointer-events: none;
   opacity: 0;
+  background-position: center top;
   &.active {
     opacity: .3;
+  }
+  img {
+    opacity: 0;
   }
   &-btn {
     width: em(50);

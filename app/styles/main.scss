@@ -1,5 +1,18 @@
+//=include ../../node_modules/slick-carousel/slick/slick.scss
 @import '_deps';
 @import '_screenshot';
 @import '_base';
 
 // sections below
+
+@import 'sections/header.scss';
+@import 'sections/hero.scss';
+@import 'sections/steps.scss';
+@import 'sections/services.scss';
+@import 'sections/benefits.scss';
+@import 'sections/testimonials.scss';
+@import 'sections/about.scss';
+@import 'sections/callback.scss';
+@import 'sections/team.scss';
+@import 'sections/footer.scss';
+@import 'sections/mobile-menu.scss';

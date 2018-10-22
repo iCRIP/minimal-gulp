@@ -1,0 +1,118 @@
+.section {
+  &-title {
+    font-family: $ffHeader;
+    font-weight: bold;
+    margin: 0;
+    font-size: em(36);
+    color: $colorDark;
+    text-align: center;
+    line-height: 1;
+
+    &--alt {
+      color: $colorAlt;
+    }
+    &--white {
+      color: $colorMain;
+    }
+  }
+  &-desc {
+    font-size: em(18);
+    text-align: center;
+    color: $colorDark;
+    margin: em(4,30) 0;
+  }
+}
+.input {
+  position: relative;
+  &-label {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    font-size: em(18);
+    color: $colorGrey;
+    font-weight: 300;
+    display: block;
+    padding: em(6,18) em(11,18) em(6,18) em(11, 18);
+    border: 2px solid transparent;
+    span {
+      transition: .4s;
+    }
+    &.has-value, &.focus {
+      span {
+        opacity: 0;
+      }
+    }
+    &-icon {
+      display: inline-block;
+      vertical-align: middle;
+      width: em(27, 18);
+      height: em(35, 18);
+      margin-right: em(15, 18);
+      background-size: 100%;
+      background-repeat: no-repeat;
+      background-position: center center;
+      &--phone {
+        background-image: url($imgPath+'icon-phone.svg');
+      }
+      &--user {
+        background-image: url($imgPath+'icon-user.svg');
+      }
+    }
+  }
+  &-value {
+    max-width: 100%;
+    font-size: em(18);
+    min-height: em(50, 18);
+    border-radius: 100px;
+    border: 2px solid $colorGrey;
+    color: $colorDark;
+    font-weight: 300;
+    font-family: $ffMain;
+    line-height: 1;
+    display: block;
+    padding: em(5, 18) em(15, 18) em(9, 18) em(53, 18);
+    transition: .4s box-shadow;
+    &:focus, &:hover {
+      outline: none;
+      box-shadow: 0 0 20px 0 $colorPrimary;
+    }
+  }
+}
+@media (min-width: 760px) {
+  .section {
+    &-desc {
+      font-size: em(30);
+    }
+  }
+}
+@media (min-width: 960px) {
+  .section {
+    &-title {
+      font-size: em(90);
+      &--small {
+        font-size: em(60);
+      }
+    }
+    &-desc {
+
+    }
+  }
+}
+@media (min-width: 1070px) {
+  .input {
+    &-label {
+      font-size: em(25);
+      padding: em(6,25) em(11,25) em(6,25) em(11, 25);
+      &-icon {
+        width: em(27, 25);
+        height: em(35, 25);
+        margin-right: em(15, 25);
+      }
+    }
+    &-value {
+      font-size: em(25);
+      min-height: em(50, 25);
+      padding: em(5,25) em(15, 25) em(9, 25) em(53, 25);
+    }
+  }
+}

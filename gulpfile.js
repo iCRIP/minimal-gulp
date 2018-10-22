@@ -30,6 +30,7 @@ gulp.task('browserSync', () => {
 gulp.task('scss', () => {
   return gulp.src('app/styles/main.scss')
     .pipe(sourcemaps.init())
+    .pipe(include())
     .pipe(scss())
       .on('error', notify.onError((error) => error))
     .pipe(autoprefixer({

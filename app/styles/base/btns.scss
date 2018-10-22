@@ -1,0 +1,69 @@
+.btn {
+  font-family: $ffMain;
+  text-align: center;
+  color: $colorPrimary;
+  border: em(1,21) solid;
+  border-radius: 100px;
+  background-color: transparent;
+  text-decoration: none;
+  display: inline-block;
+  font-size: em(14);
+  text-transform: uppercase;
+  padding: em(13, 14) em(25, 14) em(10, 14);
+  transition: .2s;
+  letter-spacing: .2px;
+  &:hover {
+    color: $colorMain;
+    background-color: transparent;
+    border-color: $colorPrimary;
+  }
+  &:focus {
+    box-shadow: 0 0 20px 0 $colorPrimary;
+    outline: none;
+  }
+  &--big {
+    font-weight: 900;
+    padding: em(17, 21) em(25,21);
+  }
+  &--fill {
+    background-color: $colorPrimary;
+    color: $colorMain;
+    width: 100%;
+    padding: em(26, 20) em(25, 20) em(27, 20);
+    font-size: em(20);
+    border-color: $colorPrimary;
+    text-align: center;
+    font-weight: 300;
+    &:hover {
+      background-color: transparent;
+      color: $colorPrimary;
+      border-color: $colorPrimary;
+    }
+  }
+  &--primary {
+    color: $colorMain;
+    background-color: $colorPrimary;
+    border-color: transparent;
+  }
+  &--black {
+    border-color: $colorDark;
+    color: $colorDark;
+    text-transform: uppercase;
+  }
+  
+}
+@media (min-width: 768px) {
+
+}
+@media (min-width: 960px) {
+  .btn {
+    font-size: em(21);
+    &--big {
+      font-weight: 900;
+      padding: em(17, 21) em(25,21);
+    }
+  }
+}
+@media (min-width: 1070px) {
+
+}

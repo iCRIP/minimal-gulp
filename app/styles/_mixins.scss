@@ -1,7 +1,19 @@
 @mixin retina($url, $size: auto) {
   background-image: url($imgPath + $url + '.png');
+  background-size: $size;
   @media (min-resolution: 192dpi) {
     background-image: url($imgPath + $url + '@2x.png');
     background-size: $size;
   }
+}
+@mixin font-face($font-family, $url, $weight) {
+	@font-face {
+		font-family: '#{$font-family}';
+		src: url('#{$url}.eot');
+		src: url('#{$url}.eot?#iefix') format('embedded-opentype'),
+		     url('#{$url}.woff') format('woff'),
+		     url('#{$url}.ttf') format('truetype');
+		font-weight: $weight;
+		font-style: normal;
+	}
 }
